@@ -29,7 +29,9 @@ When you create a virtual machine in Microsoft Azure by using an uploaded VHD, t
 This problem occurs for one of the following reasons:
 
 - The VHD does not comply with the 1 MB alignment (offset). The supported disk size should be 1 MB * N. For example, the disk should be 102,401 MB.
+- Unallocated or 0-block regions (which are valid in a dynamic disk) may not contain metadata or data, but their presence can complicate conversion to a fixed disk.
 - The VHD is corrupted or not supported.
+  
 
 ## Resolution
 
